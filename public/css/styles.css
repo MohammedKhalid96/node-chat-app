@@ -25,14 +25,13 @@ body {
     flex-grow: 1;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    list-style-type: none;
 }
 
 .chat__messages li {
-    background-color: #95afc0;
     padding: 5px;
     margin: 10px;
     border-radius: 10%;
-    color: white;
 }
 
 input[type="text"], textarea {
@@ -41,6 +40,28 @@ input[type="text"], textarea {
     border:0 !important;
 }
 
-input {
-    width: 80vw !important;
+
+.chat__footer form {
+    flex-grow: 1;
+    display: flex;
 }
+
+.btn {
+    margin: 5px;
+    height: 30px; 
+}
+
+.message__title {
+    display: flex;
+}
+
+.message__title span {
+    color: #999;
+    margin: 5px 0px 0px 5px;
+}
+
+#location-message-template span {
+    color: #999;
+    margin: 5px 0px 0px 5px;
+}
+

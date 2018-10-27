@@ -15,7 +15,7 @@
     </div>
 
     <div class="chat__main">
-        <ol id="messages" class="chat__messages"></ol>
+        <div id="messages" class="chat__messages"></div>
 
         <div class="chat__footer">
             <form id="message-form">
@@ -23,17 +23,46 @@
                     <input class="form-control" autofocus autocomplete="off" name="message" type="text" placeholder="Type..">
                 </div>
 
-                <button class="btn btn-success">Send</button>
-                <button id="send-location" class="btn btn-info">Send location</button>
+                <button class="btn btn-success btn-sm">Send</button>
+                <button id="send-location" class="btn btn-info btn-sm">Send location</button>
             </form>
         </div>
     </div>
+
+    <script id="message-template" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>    
+            <div class="message__body">
+                <p>
+                    {{text}}
+                </p>
+            </div>
+        </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>    
+            <div class="message__body">
+                <p>
+                    <a href="{{url}}" target="_blank">Current location</a>
+                </p>
+            </div>
+        </li>
+    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/libs/popper.min.js"></script>
     <script src="./js/libs/bootstrap.min.js"></script>
     <script src="/js/libs/moment.js"></script>
+    <SCript src="/js/libs/mustache.js"></SCript>
     <script src="/js/index.js"></script>
 </body>
 </html>
