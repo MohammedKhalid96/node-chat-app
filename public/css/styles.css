@@ -40,15 +40,8 @@ input[type="text"], textarea {
     border:0 !important;
 }
 
-
-.chat__footer form {
-    flex-grow: 1;
-    display: flex;
-}
-
-.btn {
-    margin: 5px;
-    height: 30px; 
+input {
+    width: 80vw !important;
 }
 
 .message__title {
