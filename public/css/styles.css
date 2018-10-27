@@ -27,6 +27,14 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+.chat__messages li {
+    background-color: #95afc0;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10%;
+    color: white;
+}
+
 input[type="text"], textarea {
     outline: none;
     box-shadow:none !important;
