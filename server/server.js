@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
-const {generateMessage} = require('./utils/message');
+const {generateMessage, generateLocationMessage} = require('./utils/message');
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 
@@ -29,12 +29,10 @@ io.on('connection', (socket) => {
         // emit the message to every single connection
         io.emit('newMessage', generateMessage(message.from, message.text)); 
         callback('This is from the server!');
+    });
 
-        // socket.broadcast.emit('newMessage', {
-        //     from: message.from,
-        //     text: message.text,
-        //     createServer: new Date().getTime()
-        // }); // will send the message to all but this socket. 
+    socket.on('createLocationMessage', (coords) => {
+        socket.broadcast.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
     });
 
     socket.on('disconnect', () => {
