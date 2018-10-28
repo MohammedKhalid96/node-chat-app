@@ -74,6 +74,11 @@ input {
     margin: 5px 0px 0px 5px;
 }
 
+.message__title h5 {
+    color: #833471;
+    font-size: 32px;
+}
+
 #location-message-template span {
     color: #999;
     margin: 5px 0px 0px 5px;
