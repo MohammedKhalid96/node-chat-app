@@ -24,7 +24,7 @@ h3 {
 }
 
 .chat__sidebar {
-    width: 150px;
+    width: 120px;
     height: 100vh;
     background-color: #feca57;
 }
@@ -76,7 +76,7 @@ input {
 
 .message__title h5 {
     color: #833471;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 #location-message-template span {
@@ -102,7 +102,7 @@ input {
 
 .chat__sidebar ol {
     color: #fff;
-    font-size: 22px;
+    font-size: 16px;
     padding: 5px;
     background-color: #EA2027;
 }
@@ -112,5 +112,10 @@ input {
     list-style: none;
 }
 
+@media only screen and (max-width: 600px) {
+    .chat__sidebar {
+        display: none;
+    }
+}
 
 
