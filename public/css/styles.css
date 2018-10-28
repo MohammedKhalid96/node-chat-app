@@ -1,5 +1,6 @@
 body {
     display: flex;
+    font-family: 'Mali', cursive;
 }
 
 .chat__sidebar {
