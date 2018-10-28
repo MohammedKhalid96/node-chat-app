@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <link rel="stylesheet" href="/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Chat | ChatApp</title>
+</head>
+<body>
+
+    <div class="chat__sidebar">
+
+    </div>
+
+    <div class="chat__main">
+        <div id="messages" class="chat__messages"></div>
+
+        <div class="chat__footer">
+            <form id="message-form">
+                <div class="input-group input-group-md mb-3">
+                    <input class="form-control" autofocus autocomplete="off" name="message" type="text" placeholder="Type..">
+                </div>
+
+                <button class="btn btn-success btn-sm">Send</button>
+                <button id="send-location" class="btn btn-info btn-sm">Send location</button>
+            </form>
+        </div>
+    </div>
+
+    <script id="message-template" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>    
+            <div class="message__body">
+                <p>
+                    {{text}}
+                </p>
+            </div>
+        </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>    
+            <div class="message__body">
+                <p>
+                    <a href="{{url}}" target="_blank">Current location</a>
+                </p>
+            </div>
+        </li>
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/popper.min.js"></script>
+    <script src="./js/libs/bootstrap.min.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <SCript src="/js/libs/mustache.js"></SCript>
+    <script src="/js/chat.js"></script>
+</body>
+</html>

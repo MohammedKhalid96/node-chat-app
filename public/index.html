@@ -7,56 +7,32 @@
     <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
     <link rel="stylesheet" href="/css/libs/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Home</title>
+    <title>Join | ChatApp</title>
 </head>
-<body>
+<body class="centered-form">
+    <div class="container">
+            <h3 class="text-center">Welcome to the ChatApp!</h3>
+            <p class="text-center">Want to know how to use it? <a href="#click-here">click-here</a></p>
+            <div class="centered-form__form">
+            <form action="/chat.html">
 
-    <div class="chat__sidebar">
-
-    </div>
-
-    <div class="chat__main">
-        <div id="messages" class="chat__messages"></div>
-
-        <div class="chat__footer">
-            <form id="message-form">
-                <div class="input-group input-group-md mb-3">
-                    <input class="form-control" autofocus autocomplete="off" name="message" type="text" placeholder="Type..">
+                <div>
+                    <h2 class="text-center">JOIN</h2>
+                </div>
+                <div class="input-group input-group-md mb-3 form-field">
+                    <input class="form-control" name="name" autofocus autocomplete="off" type="text" placeholder="Display name">
+                </div>
+                <div class="input-group input-group-md mb-3 form-field">
+                    <input class="form-control" name="room" autocomplete="off" type="text" placeholder="Room name">
                 </div>
 
-                <button class="btn btn-success btn-sm">Send</button>
-                <button id="send-location" class="btn btn-info btn-sm">Send location</button>
+                <div class="text-center">
+                    <button class="btn btn-success btn-lg">Join</button>
+                </div>
+
             </form>
         </div>
     </div>
-
-    <script id="message-template" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                <h5>{{from}}</h5>
-                <span>{{createdAt}}</span>
-            </div>    
-            <div class="message__body">
-                <p>
-                    {{text}}
-                </p>
-            </div>
-        </li>
-    </script>
-
-    <script id="location-message-template" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                <h5>{{from}}</h5>
-                <span>{{createdAt}}</span>
-            </div>    
-            <div class="message__body">
-                <p>
-                    <a href="{{url}}" target="_blank">Current location</a>
-                </p>
-            </div>
-        </li>
-    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
@@ -64,6 +40,6 @@
     <script src="./js/libs/bootstrap.min.js"></script>
     <script src="/js/libs/moment.js"></script>
     <SCript src="/js/libs/mustache.js"></SCript>
-    <script src="/js/index.js"></script>
+    <script src="/js/chat.js"></script>
 </body>
 </html>
