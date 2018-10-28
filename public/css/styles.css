@@ -1,6 +1,21 @@
 body {
     display: flex;
-    font-family: 'Mali', cursive;
+    font-family: 'Changa', sans-serif;
+}
+
+.logo h1 {
+    font-size: 30px;
+    color: #833471;
+    padding-top: 20px;
+}
+
+.logo span {
+    color: black;
+    font-size: 24px;
+}
+
+h3 {
+    margin-top: 40px;
 }
 
 .centered-form a {
@@ -9,7 +24,7 @@ body {
 }
 
 .chat__sidebar {
-    width: 100px;
+    width: 150px;
     height: 100vh;
     background-color: #feca57;
 }
@@ -66,7 +81,6 @@ input {
 
 .centered-form {
     display: flex;
-    align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
@@ -77,5 +91,21 @@ input {
     background-color: #feca57;
     padding: 15px;
     border-radius: 20px;
+    align-items: center;
+    justify-content: center;
 }
+
+.chat__sidebar ol {
+    color: #fff;
+    font-size: 22px;
+    padding: 5px;
+    background-color: #EA2027;
+}
+
+.chat__sidebar li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
 

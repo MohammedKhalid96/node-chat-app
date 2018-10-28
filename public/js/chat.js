@@ -16,16 +16,30 @@ function scrollBottom () {
 };
 
 socket.on('connect', function () {
-    console.log('Connected to server');
+    var params = jQuery.deparam(window.location.search); // get the data (name and room name from url)
 
-    // socket.emit('createMessage', {
-    //     from: "ahmed@gmail.com",
-    //     text: "Hey!"
-    // });
+    socket.emit('join', params, function (err) {
+        if (err) {
+            alert(err);
+            window.location.href = '/'; // if there err or invalid data send the user back to index page
+        } else {
+            console.log('No error');
+        }
+    });
 });
 
 socket.on('disconnect', function () {
     console.log('Disconnected from server');
+});
+
+socket.on('updateUserList', function (users) {
+    var p = jQuery('<ol></ol>');
+
+    users.forEach(function (user) {
+        p.append(jQuery('<li></li>').text(user));
+    });
+
+    jQuery('#users').html(p);
 });
 
 socket.on('newMessage', function (message) {
@@ -53,13 +67,6 @@ socket.on('newLocationMessage', function (message) {
     jQuery('#messages').append(html);
     scrollBottom();
 });
-
-// socket.emit('createMessage', {
-//     from: 'Ahmed',
-//     text: 'Hi!'
-// }, function (data) {
-//     console.log('Got it', data); // make sure that the message recieved by the server successfully
-// });
 
 jQuery('#message-form').on('submit', function (e) {
     e.preventDefault();
